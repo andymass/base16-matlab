@@ -25,7 +25,7 @@ To install a Base16 color scheme, run the supplied `apply_colors` script
 inside MATLAB, passing the name of the scheme followed by 
 either `-light` or `-dark` (no Base16 prefix).  
 
-:warning: This will permanently change the colors of the 
+> :warning: This will permanently change the colors of the 
 MATLAB desktop and your scheme will be preserved upon restart.  To restore 
 the default colors you must use the MATLAB GUI (in HOME /
 Preferences).
@@ -36,18 +36,19 @@ apply_colors('default-dark')
 apply_colors('default-light')
 ```
 
-:cold_sweat: The MATLAB files in `colors/` cannot be run directly 
+> :cold_sweat: The MATLAB files in `colors/` cannot be run directly 
 because their filenames contain hyphens.  If you would like to use them
 manually you will need to rename them (e.g. 
 `for x in base16-*.m; do mv $x ${x//-/_};done`)
-and setup the `base16_opts` structure manually.
+and set up the `base16_opts` structure manually.
 
 ### Options and variants
 
 Each Base16 MATLAB scheme currently supports two options:
 
-  - You can choose to suppress highlighting of the current cursor 
-line by setting the second argument of `apply_colors` to `0`.
+  - You can choose to suppress the highlighting of the
+editor line currently under the cursor 
+by setting the second argument of `apply_colors` to `0`.
 The default behavior (equivalent to an argument of `1`) is to 
 highlight the cursor line.
   - Each scheme also has a variant color assignment which may look
