@@ -24,5 +24,5 @@ for darkflag = {'dark', 'light'}
 end
 
 fclose(fid);
-cd('colordemo');
+cd('demoscript');
 
