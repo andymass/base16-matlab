@@ -9,9 +9,6 @@ if nargin < 3
     base16_alternate = 0;
 end
 
-global foo;
-foo = 10;
-
 fname = ['colors/base16-' scheme '.m'];
 
 base16_opts.schemefile = fname;
