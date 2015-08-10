@@ -14,8 +14,8 @@ highlighting.  See [Installation](#installation) for instructions.
 
 ## Example
 
-Scheme _default-dark_:
-![Base16 MATLAB default dark](screenshots/base16-default-dark.png)
+Scheme _default-dark (variant=1)_:
+![Base16 MATLAB default dark](screenshots/base16-default-dark-var.png)
 
 See [here](screenshots/index.md) for (many) additional screenshots.
 
@@ -39,7 +39,7 @@ apply_colors('default-light')
 :cold_sweat: The MATLAB files in `colors/` cannot be run directly 
 because their filenames contain hyphens.  If you would like to use them
 manually you will need to rename them (e.g. 
-`for x in base16-*.m; do cp $x ${x//-/_};done`)
+`for x in base16-*.m; do mv $x ${x//-/_};done`)
 and setup the `base16_opts` structure manually.
 
 ### Options and variants

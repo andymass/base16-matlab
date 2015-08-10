@@ -12,7 +12,7 @@ end
 global foo;
 foo = 10;
 
-fname = ['base16-' scheme '.m'];
+fname = ['colors/base16-' scheme '.m'];
 
 base16_opts.schemefile = fname;
 base16_opts.highlight_line = base16_highlight_line;
