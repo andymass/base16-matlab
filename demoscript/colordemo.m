@@ -2,7 +2,7 @@ cd('..');
 fid = fopen('screenshots/index.md', 'w');
 
 for darkflag = {'dark', 'light'}
-    files = dir(['*' darkflag{:} '.m']);
+    files = dir(['colors/*' darkflag{:} '.m']);
     for ii = 1:length(files)
         file = files(ii).name;
         scheme = regexp(file, '(base16-)([\w-]+).m', 'tokens');
