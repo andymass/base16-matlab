@@ -21,8 +21,19 @@ See [here](screenshots/index.md) for (many) additional screenshots.
 
 ## Installation
 
-To install a Base16 color scheme, run the supplied `apply_colors` script 
-inside MATLAB, passing the name of the scheme followed by 
+To install Base16 MATLAB, download or clone the repository to 
+any location of your choice (after applying a scheme you 
+may optionally delete these Base16 MATLAB files; MATLAB will
+preserve the color scheme without the files).
+
+First switch to the installation directory either through the 
+MATLAB GUI or using
+```matlab
+cd('base16-matlab-master')      % replace with directory containing apply_colors.m
+```
+
+To apply a particular Base16 color scheme, run the supplied `apply_colors` script 
+from within MATLAB, passing the name of the scheme followed by 
 either `-light` or `-dark` (no Base16 prefix).  
 
 > :warning: This will permanently change the colors of the 
@@ -31,7 +42,6 @@ the default colors you must use the MATLAB GUI (in HOME /
 Preferences).
 
 ```matlab
-cd('base16-matlab')
 apply_colors('default-dark')
 apply_colors('default-light')
 ```
@@ -56,7 +66,7 @@ better for some schemes.  You can specify this using the third argument to
 `apply_colors`; `0` (default) or `1`.
 
 ```matlab
-cd('base16-matlab')
+cd('base16-matlab-master')
 apply_colors('default-dark', 0, 1)
 %                             \  \_[ do use variant 1 ]
 %                              \___[ do not highlight cursor line ]
