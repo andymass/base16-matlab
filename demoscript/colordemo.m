@@ -1,4 +1,6 @@
 cd('..');
+system('wmctrl -r "MATLAB R" -e 0,50,50,650,500');
+
 fid = fopen('screenshots/index.md', 'w');
 
 for darkflag = {'dark', 'light'}
@@ -8,7 +10,7 @@ for darkflag = {'dark', 'light'}
         scheme = regexp(file, '(base16-)([\w-]+).m', 'tokens');
         for variant = 0:1
             apply_colors(scheme{1}{2}, 1, variant);
-            pause(0.75);
+            pause(1);
             if variant
                 img = [scheme{1}{:} '-var.png'];
                 alt = [scheme{1}{2} ' variant'];
