@@ -1,8 +1,9 @@
 # Base16 MATLAB
 
 This is a set of color schemes for the MATLAB desktop GUI and editor.
-The color scheme files are automatically generated with template
-[files](https://github.com/andymass/base16-matlab/templates) using the
+The color scheme files are automatically generated with 
+[template files](https://github.com/andymass/base16-matlab/tree/master/templates)
+using the new
 [Base16 builder](https://github.com/chriskempson/base16-builder-php).
 
 See the [Base16 repository](https://github.com/chriskempson/base16)
@@ -64,14 +65,14 @@ editor line currently under the cursor
 by setting the second argument of `apply_colors` to `0`.
 The default behavior (equivalent to an argument of `1`) is to 
 highlight the cursor line.
-  - Each scheme also has a variant color assignment which may look
+  - Each scheme also has an alternate color assignment which may look
 better for some schemes.  You can specify this using the third argument to
 `apply_colors`; `0` or `1` (default).
 
 ```matlab
 cd('base16-matlab-master')
-apply_colors('default-dark', 0, 1)
-%                             \  \_[ do not use variant ]
+apply_colors('default-dark', 0, 0)
+%                             \  \_[ do use alternate ]
 %                              \___[ do not highlight cursor line ]
 ```
 
