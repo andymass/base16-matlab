@@ -6,10 +6,11 @@ if nargin < 2
     base16_highlight_line = 1;
 end
 if nargin < 3
-    base16_alternate = 0;
+    base16_alternate = 1;
 end
 
-fname = ['colors/base16-' scheme '.m'];
+root = fileparts(mfilename('fullpath'));
+fname = fullfile(root, 'colors', ['base16-' scheme '.m']);
 
 base16_opts.schemefile = fname;
 base16_opts.highlight_line = base16_highlight_line;

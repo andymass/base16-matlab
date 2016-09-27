@@ -1,25 +1,25 @@
-% base16-solarized-dark: sets MATLAB GUI colors 
+% base16-flat: sets MATLAB GUI colors 
 %   base16-matlab (https://github.com/andymass/base16-matlab)
 %   base16 by Chris Kempson (http://chriskempson.com)
-%   scheme Solarized Dark by Ethan Schoonover (http://ethanschoonover.com/solarized)
+%   scheme Flat by Chris Kempson (http://chriskempson.com)
 
-gui00 = '0x002b36';
-gui01 = '0x073642';
-gui02 = '0x586e75';
-gui03 = '0x657b83';
-gui04 = '0x839496';
-gui05 = '0x93a1a1';
-gui06 = '0xeee8d5';
-gui07 = '0xfdf6e3';
-gui08 = '0xdc322f';
-gui09 = '0xcb4b16';
-gui0A = '0xb58900';
-gui0B = '0x859900';
-gui0C = '0x2aa198';
-gui0D = '0x268bd2';
-gui0E = '0x6c71c4';
-gui0F = '0xd33682';
-hlsect = mix( [ 0, 43, 54 ], [7 54, 66 ], 75 ) / 255;
+gui00 = '0x2C3E50';
+gui01 = '0x34495E';
+gui02 = '0x7F8C8D';
+gui03 = '0x95A5A6';
+gui04 = '0xBDC3C7';
+gui05 = '0xe0e0e0';
+gui06 = '0xf5f5f5';
+gui07 = '0xECF0F1';
+gui08 = '0xE74C3C';
+gui09 = '0xE67E22';
+gui0A = '0xF1C40F';
+gui0B = '0x2ECC71';
+gui0C = '0x1ABC9C';
+gui0D = '0x3498DB';
+gui0E = '0x9B59B6';
+gui0F = '0xbe643c';
+hlsect = mix( [ 44, 62, 80 ], [52 73, 94 ], 75 ) / 255;
 if ~exist('base16_opts', 'var')
     base16_opts.alternate = 1;
     base16_opts.highlight_line = 1;

@@ -1,7 +1,7 @@
-
-%% Sets MATLAB GUI colors
-% Base16 harmonic16 (https://github.com/chriskempson/base16)
-% Scheme author: Jannik Siebert (https://github.com/janniks)
+% base16-harmonic16-light: sets MATLAB GUI colors 
+%   base16-matlab (https://github.com/andymass/base16-matlab)
+%   base16 by Chris Kempson (http://chriskempson.com)
+%   scheme Harmonic16 Light by Jannik Siebert (https://github.com/janniks)
 
 gui00 = '0xf7f9fb';
 gui01 = '0xe5ebf1';
@@ -19,7 +19,16 @@ gui0C = '0x568bbf';
 gui0D = '0x8b56bf';
 gui0E = '0xbf568b';
 gui0F = '0xbf5656';
-hlsect = [241,244,247]/255;
+hlsect = mix( [ 247, 249, 251 ], [229 235, 241 ], 75 ) / 255;
+if ~exist('base16_opts', 'var')
+    base16_opts.alternate = 1;
+    base16_opts.highlight_line = 1;
+end
+if base16_opts.alternate
+    alt = @(a,b) b;
+else
+    alt = @(a,b) a;
+end
 
 % Don't use system colors
 com.mathworks.services.Prefs.setBooleanPref('ColorsUseSystem',0);
@@ -41,19 +50,19 @@ com.mathworks.services.Prefs.setColorPref( ...
     'ColorsBackground', java.awt.Color.decode( gui00 ));
 com.mathworks.services.ColorPrefs.notifyColorListeners('ColorsBackground'); 
 
-%% MATLAB syntax hightlighting colors
+%% MATLAB syntax highlighting colors
 % Keywords
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_Keywords', java.awt.Color.decode( gui0D ));
+    'Colors_M_Keywords', java.awt.Color.decode( alt(gui0D,gui0E) ));
 % Strings
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_Strings', java.awt.Color.decode( gui0F ));
+    'Colors_M_Strings', java.awt.Color.decode( alt(gui0F,gui0B) ));
 % System Commands
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_SystemCommands', java.awt.Color.decode( gui0A ));
+    'Colors_M_SystemCommands', java.awt.Color.decode( alt(gui0A,gui0D) ));
 % Comments
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_Comments', java.awt.Color.decode( gui0C ));
+    'Colors_M_Comments', java.awt.Color.decode( alt(gui0C,gui03) ));
 % Unterminated Strings
 com.mathworks.services.Prefs.setColorPref( ...
     'Colors_M_UnterminatedStrings', java.awt.Color.decode( gui09 ));
@@ -67,15 +76,15 @@ com.mathworks.services.Prefs.setColorPref( ...
     'Color_CmdWinErrors', java.awt.Color.decode( gui08 ));
 % Warning Text
 com.mathworks.services.Prefs.setColorPref( ...
-    'Color_CmdWinWarnings', java.awt.Color.decode( gui09 ));
+    'Color_CmdWinWarnings', java.awt.Color.decode( alt(gui09,gui08) ));
 % Hyperlinks
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_HTML_HTMLLinks', java.awt.Color.decode( gui0D ));
+    'Colors_HTML_HTMLLinks', java.awt.Color.decode( alt(gui0D,gui09) ));
 
 %% Color analyzer colors
 % Warnings
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_Warnings', java.awt.Color.decode( gui09 ));
+    'Colors_M_Warnings', java.awt.Color.decode( alt(gui09,gui0F) ));
 % Autofix highlight
 com.mathworks.services.Prefs.setColorPref( ...
     'ColorsMLintAutoFixBackground', java.awt.Color.decode( gui02 ));
@@ -85,11 +94,11 @@ com.mathworks.services.ColorPrefs.notifyColorListeners(...
 %% Variable and function colors
 % Automatically Highlight
 com.mathworks.services.Prefs.setColorPref( ...
-    'Editor.VariableHighlighting.Color', java.awt.Color.decode( gui0E ));
+    'Editor.VariableHighlighting.Color', java.awt.Color.decode( gui02 ));
 % Variables with shared scope
 com.mathworks.services.Prefs.setColorPref( ...
     'Editor.NonlocalVariableHighlighting.TextColor', ...
-    java.awt.Color.decode( gui0B ));
+    java.awt.Color.decode( alt(gui0B,gui0C) ));
 
 %% Section display options
 % Highlight Sections

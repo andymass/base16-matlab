@@ -1,7 +1,7 @@
-
-%% Sets MATLAB GUI colors
-% Base16 Default (https://github.com/chriskempson/base16)
-% Scheme author: Chris Kempson (http://chriskempson.com)
+% base16-default-dark: sets MATLAB GUI colors 
+%   base16-matlab (https://github.com/andymass/base16-matlab)
+%   base16 by Chris Kempson (http://chriskempson.com)
+%   scheme Default Dark by Chris Kempson (http://chriskempson.com)
 
 gui00 = '0x181818';
 gui01 = '0x282828';
@@ -19,7 +19,11 @@ gui0C = '0x86c1b9';
 gui0D = '0x7cafc2';
 gui0E = '0xba8baf';
 gui0F = '0xa16946';
-hlsect = [29,29,29]/255;
+hlsect = mix( [ 24, 24, 24 ], [40 40, 40 ], 75 ) / 255;
+if ~exist('base16_opts', 'var')
+    base16_opts.alternate = 1;
+    base16_opts.highlight_line = 1;
+end
 if base16_opts.alternate
     alt = @(a,b) b;
 else
@@ -46,7 +50,7 @@ com.mathworks.services.Prefs.setColorPref( ...
     'ColorsBackground', java.awt.Color.decode( gui00 ));
 com.mathworks.services.ColorPrefs.notifyColorListeners('ColorsBackground'); 
 
-%% MATLAB syntax hightlighting colors
+%% MATLAB syntax highlighting colors
 % Keywords
 com.mathworks.services.Prefs.setColorPref( ...
     'Colors_M_Keywords', java.awt.Color.decode( alt(gui0D,gui0E) ));
@@ -55,7 +59,7 @@ com.mathworks.services.Prefs.setColorPref( ...
     'Colors_M_Strings', java.awt.Color.decode( alt(gui0F,gui0B) ));
 % System Commands
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_SystemCommands', java.awt.Color.decode( alt(gui0A,gui0C) ));
+    'Colors_M_SystemCommands', java.awt.Color.decode( alt(gui0A,gui0D) ));
 % Comments
 com.mathworks.services.Prefs.setColorPref( ...
     'Colors_M_Comments', java.awt.Color.decode( alt(gui0C,gui03) ));
@@ -80,7 +84,7 @@ com.mathworks.services.Prefs.setColorPref( ...
 %% Color analyzer colors
 % Warnings
 com.mathworks.services.Prefs.setColorPref( ...
-    'Colors_M_Warnings', java.awt.Color.decode( alt(gui09,gui08) ));
+    'Colors_M_Warnings', java.awt.Color.decode( alt(gui09,gui0F) ));
 % Autofix highlight
 com.mathworks.services.Prefs.setColorPref( ...
     'ColorsMLintAutoFixBackground', java.awt.Color.decode( gui02 ));
@@ -90,11 +94,11 @@ com.mathworks.services.ColorPrefs.notifyColorListeners(...
 %% Variable and function colors
 % Automatically Highlight
 com.mathworks.services.Prefs.setColorPref( ...
-    'Editor.VariableHighlighting.Color', java.awt.Color.decode( gui0D ));
+    'Editor.VariableHighlighting.Color', java.awt.Color.decode( gui02 ));
 % Variables with shared scope
 com.mathworks.services.Prefs.setColorPref( ...
     'Editor.NonlocalVariableHighlighting.TextColor', ...
-    java.awt.Color.decode( alt(gui0B, gui0C) ));
+    java.awt.Color.decode( alt(gui0B,gui0C) ));
 
 %% Section display options
 % Highlight Sections
